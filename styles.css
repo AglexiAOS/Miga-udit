@@ -1,0 +1,246 @@
+/* MIGA · CSS propio. Tailwind resuelve layout, tipografía y responsive. */
+@layer theme, base, vendor, components, utilities;
+@import url("assets/vendor/splide-core.min.css") layer(vendor);
+
+@font-face {
+  font-family: "Fraunces";
+  src: url("assets/fonts/fraunces.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+}
+@font-face {
+  font-family: "DM Sans";
+  src: url("assets/fonts/dm-sans.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 100 1000;
+  font-display: swap;
+}
+
+@layer base {
+  :root {
+    color-scheme: light;
+    --miga-focus: #9e3e2b;
+  }
+  :root.dark {
+    color-scheme: dark;
+    --miga-focus: #f0aa8f;
+  }
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 2rem;
+  }
+  body {
+    margin: 0;
+    font-optical-sizing: auto;
+  }
+  body.menu-open {
+    overflow: hidden;
+  }
+  [hidden] {
+    display: none !important;
+  }
+  h1, h2, h3, .wordmark {
+    font-variation-settings: "SOFT" 50, "WONK" 1, "opsz" 72;
+  }
+  button, summary {
+    -webkit-tap-highlight-color: transparent;
+  }
+  button:not(:disabled), summary {
+    cursor: pointer;
+  }
+  button:disabled {
+    cursor: default;
+    opacity: .5;
+  }
+  :where(a, button, summary, [tabindex]):focus-visible {
+    outline: 3px solid var(--miga-focus);
+    outline-offset: 4px;
+    border-radius: 3px;
+  }
+  :where(h1,h2)[tabindex="-1"]:focus {
+    outline: none;
+  }
+  ::selection {
+    background: #f0aa8f;
+    color: #201915;
+  }
+}
+
+@layer components {
+  .skip-link {
+    position: fixed;
+    inset: 1rem auto auto 1rem;
+    z-index: 100;
+    transform: translateY(-180%);
+    padding: .8rem 1rem;
+    background: #38251d;
+    color: #fffaf2;
+  }
+  .skip-link:focus {
+    transform: translateY(0);
+  }
+  .nav-link {
+    text-underline-offset: .35em;
+    text-decoration-thickness: 1px;
+  }
+  .nav-link:hover {
+    text-decoration-line: underline;
+  }
+  .brand-link:hover .wordmark {
+    text-decoration: underline;
+    text-underline-offset: .12em;
+    text-decoration-thickness: 1px;
+  }
+  .filter-check {
+    width: .75rem;
+    visibility: hidden;
+  }
+  [aria-pressed="true"] .filter-check {
+    visibility: visible;
+  }
+  [data-filter][aria-pressed="true"]:hover {
+    text-decoration: underline;
+    text-underline-offset: .2em;
+  }
+  .product-card {
+    scroll-margin-top: 2rem;
+  }
+  .product-card:focus-within {
+    outline: 2px solid var(--miga-focus);
+    outline-offset: 6px;
+  }
+  .product-card:hover .product-image {
+    transform: scale(1.025);
+  }
+  .product-card:hover h3 {
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: .2em;
+  }
+  .product-image {
+    transition: transform 240ms ease-out;
+  }
+  .product-details summary {
+    list-style: none;
+  }
+  .product-details summary::-webkit-details-marker {
+    display: none;
+  }
+  .product-details .when-open {
+    display: none;
+  }
+  .product-details[open] .when-open {
+    display: inline;
+  }
+  .product-details[open] .when-closed {
+    display: none;
+  }
+  .product-details[open] .details-content {
+    animation: miga-detalle 180ms ease-out both;
+  }
+  .hero-title {
+    animation: miga-reveal 420ms ease-out both;
+  }
+  .mobile-menu {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    max-width: none;
+    height: 100dvh;
+    max-height: none;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    overflow: auto;
+  }
+  .mobile-menu[open] {
+    animation: miga-reveal 180ms ease-out both;
+  }
+  .mobile-menu::backdrop {
+    background: rgb(32 25 21 / .4);
+  }
+  .season-section {
+    --miga-focus: #fffaf2;
+  }
+  .dark .season-section {
+    --miga-focus: #f0aa8f;
+  }
+  .splide {
+    visibility: visible;
+  }
+  .splide:not(.is-initialized) .splide__arrows {
+    display: none;
+  }
+  .splide:not(.is-initialized) .splide__list {
+    gap: 1.5rem;
+    overflow-x: auto;
+  }
+  .splide:not(.is-initialized) .splide__slide {
+    flex: 0 0 100%;
+  }
+  .splide__slide {
+    padding-bottom: .5rem;
+  }
+  .splide__track {
+    padding-block: .4rem;
+  }
+  .season-image {
+    aspect-ratio: 2 / 1;
+    object-fit: cover;
+  }
+  .map-art {
+    background-image: linear-gradient(90deg, transparent 23%, var(--map-road) 23%, var(--map-road) 29%, transparent 29%, transparent 66%, var(--map-road) 66%, var(--map-road) 72%, transparent 72%), linear-gradient(0deg, transparent 26%, var(--map-road) 26%, var(--map-road) 33%, transparent 33%, transparent 70%, var(--map-road) 70%, var(--map-road) 77%, transparent 77%);
+    --map-road: #f5ede0;
+  }
+  .dark .map-art {
+    --map-road: #201915;
+  }
+  .footer-link {
+    --miga-focus: #fffaf2;
+  }
+  @media (min-width: 640px) {
+    .splide:not(.is-initialized) .splide__slide {
+      flex-basis: calc((100% - 1.5rem) / 2);
+    }
+  }
+  @media (min-width: 1024px) {
+    .splide:not(.is-initialized) .splide__slide {
+      flex-basis: calc((100% - 3rem) / 3);
+    }
+  }
+  @keyframes miga-reveal {
+    from {
+      opacity: 0;
+      transform: translateY(12px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  @keyframes miga-detalle {
+    from {
+      opacity: 0;
+      transform: translateY(4px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+    *, *::before, *::after {
+      animation-duration: .01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: .01ms !important;
+      scroll-behavior: auto !important;
+    }
+    .product-card:hover .product-image {
+      transform: none;
+    }
+  }
+}

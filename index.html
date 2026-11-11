@@ -1,0 +1,1144 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="MIGA: panadería, obrador y pastelería de barrio. Pan de masa madre, bollería y tartas. Proyecto académico de un comercio ficticio.">
+    <meta name="theme-color" content="#F5EDE0">
+    <meta name="color-scheme" content="light dark">
+    <title>
+      MIGA · Panadería, obrador y pastelería
+    </title>
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+    <link rel="preload" href="assets/fonts/fraunces.ttf" as="font" type="font/ttf" crossorigin>
+    <link rel="preload" href="assets/fonts/dm-sans.ttf" as="font" type="font/ttf" crossorigin>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Tailwind CSS v4 mediante Play CDN: requisito del briefing. -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4">
+    </script>
+    <style type="text/tailwindcss">
+    @theme {
+      --color-crema: #F5EDE0;
+      --color-harina: #FFFAF2;
+      --color-tostado: #38251D;
+      --color-teja: #9E3E2B;
+      --color-brasa: #F0AA8F;
+      --color-carbon: #201915;
+      --color-corteza: #30231D;
+      --color-avellana: #675348;
+      --color-avellana-clara: #C8B4A6;
+      --color-linea: #CDBBA8;
+      --color-linea-oscura: #745E50;
+      --font-titulo: "Fraunces", Georgia, serif;
+      --font-texto: "DM Sans", Arial, sans-serif;
+      --breakpoint-xs: 22.5rem;
+    }
+    @custom-variant dark (&:where(.dark, .dark *));
+  
+    </style>
+    <script src="assets/vendor/splide.min.js" defer>
+    </script>
+    <script src="script.js" defer>
+    </script>
+  </head>
+  <body class="bg-crema font-texto text-tostado antialiased dark:bg-carbon dark:text-crema">
+    <svg xmlns="http://www.w3.org/2000/svg" class="absolute size-0 overflow-hidden" aria-hidden="true">
+      <symbol id="icon-moon" viewBox="0 0 24 24">
+        <path fill="currentColor" d="M20.6 14.1A8.8 8.8 0 0 1 9.9 3.4 9 9 0 1 0 20.6 14.1Z"/>
+      </symbol>
+      <symbol id="icon-sun" viewBox="0 0 24 24">
+        <g fill="none" stroke="currentColor" stroke-width="1.5">
+          <circle cx="12" cy="12" r="4"/>
+          <path d="M12 1v3m0 16v3M1 12h3m16 0h3M4.2 4.2l2.1 2.1m11.4 11.4 2.1 2.1M4.2 19.8l2.1-2.1M17.7 6.3l2.1-2.1"/>
+        </g>
+      </symbol>
+      <symbol id="icon-menu" viewBox="0 0 24 24">
+        <path fill="none" stroke="currentColor" stroke-width="1.5" d="M2 5h20M2 12h20M2 19h20"/>
+      </symbol>
+      <symbol id="icon-close" viewBox="0 0 24 24">
+        <path fill="none" stroke="currentColor" stroke-width="1.5" d="m4 4 16 16M20 4 4 20"/>
+      </symbol>
+      <symbol id="icon-right" viewBox="0 0 24 24">
+        <path fill="none" stroke="currentColor" stroke-width="1.5" d="M3 12h17m-7-7 7 7-7 7"/>
+      </symbol>
+      <symbol id="icon-left" viewBox="0 0 24 24">
+        <path fill="none" stroke="currentColor" stroke-width="1.5" d="M21 12H4m7-7-7 7 7 7"/>
+      </symbol>
+      <symbol id="icon-check" viewBox="0 0 24 24">
+        <path fill="none" stroke="currentColor" stroke-width="2.5" d="m4 12 5 5L20 6"/>
+      </symbol>
+    </svg>
+    <a class="skip-link" href="#contenido">
+      Saltar al contenido
+    </a>
+    <!-- Cabecera -->
+    <header id="inicio" class="mx-auto max-w-[1360px] px-6 sm:px-8 md:px-10">
+      <div class="flex min-h-20 items-center justify-between gap-4 border-b border-linea py-4 lg:min-h-[104px] dark:border-linea-oscura">
+        <a href="#inicio" aria-label="MIGA, inicio" class="brand-link flex items-center gap-7">
+          <span class="wordmark font-titulo text-[35px] font-semibold leading-none text-teja lg:text-[42px] dark:text-brasa">
+            MIGA
+          </span>
+          <span class="hidden text-[10px] font-semibold tracking-wider xl:block">
+            PANADERÍA / OBRADOR
+          </span>
+        </a>
+        <nav aria-label="Navegación principal" class="ml-auto hidden lg:block">
+          <ul class="flex items-center gap-6 xl:gap-8">
+            <li>
+              <a class="nav-link py-3 text-sm font-semibold" href="#mostrador">
+                El mostrador
+              </a>
+            </li>
+            <li>
+              <a class="nav-link py-3 text-sm font-semibold" href="#temporada">
+                De temporada
+              </a>
+            </li>
+            <li>
+              <a class="nav-link py-3 text-sm font-semibold" href="#obrador">
+                El obrador
+              </a>
+            </li>
+            <li>
+              <a class="nav-link py-3 text-sm font-semibold" href="#encargos">
+                Encargos
+              </a>
+            </li>
+            <li>
+              <a class="nav-link py-3 text-sm font-semibold" href="#visitanos">
+                Visítanos
+              </a>
+            </li>
+          </ul>
+        </nav>
+        <div class="flex items-center gap-3 lg:ml-5">
+          <button type="button" data-theme-toggle class="inline-flex size-12 shrink-0 items-center justify-center rounded-full border border-linea transition-colors hover:bg-harina dark:border-linea-oscura dark:hover:bg-corteza" aria-label="Modo oscuro" aria-pressed="false" title="Cambiar entre modo claro y oscuro">
+            <svg class="size-6 dark:hidden" aria-hidden="true" width="24" height="24">
+              <use href="#icon-moon">
+              </use>
+            </svg>
+            <svg class="hidden size-6 dark:block" aria-hidden="true" width="24" height="24">
+              <use href="#icon-sun">
+              </use>
+            </svg>
+          </button>
+          <button id="menu-open" type="button" aria-label="Abrir menú" aria-controls="mobile-menu" aria-expanded="false" class="inline-flex size-11 items-center justify-center rounded-[3px] transition-colors hover:bg-harina dark:hover:bg-corteza lg:hidden">
+            <svg class="size-6" aria-hidden="true" width="24" height="24">
+              <use href="#icon-menu">
+              </use>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </header>
+    <!-- Menú móvil -->
+    <dialog id="mobile-menu" aria-label="Menú de navegación" class="mobile-menu bg-crema text-tostado dark:bg-carbon dark:text-crema">
+      <div class="mx-auto max-w-[1360px] px-6 sm:px-8 md:px-10 flex min-h-full flex-col pb-8">
+        <div class="flex min-h-20 items-center justify-between border-b border-linea dark:border-linea-oscura">
+          <span class="wordmark font-titulo text-[35px] font-semibold text-teja dark:text-brasa">
+            MIGA
+          </span>
+          <button type="button" id="menu-close" aria-label="Cerrar menú" class="inline-flex size-11 items-center justify-center rounded-[3px] transition-colors hover:bg-harina dark:hover:bg-corteza">
+            <svg class="size-6" aria-hidden="true" width="24" height="24">
+              <use href="#icon-close">
+              </use>
+            </svg>
+          </button>
+        </div>
+        <p class="text-xs font-semibold uppercase tracking-[0.1em] text-teja dark:text-brasa mb-7 mt-10">
+          Lo bueno está aquí
+        </p>
+        <nav aria-label="Navegación móvil">
+          <ul>
+            <li class="border-b border-linea dark:border-linea-oscura">
+              <a href="#mostrador" class="nav-link flex min-h-20 items-center justify-between gap-3 py-4 font-titulo text-[clamp(1.5rem,6.7vw,2rem)] font-semibold">
+                El mostrador
+                <svg class="size-6 shrink-0" aria-hidden="true" width="24" height="24">
+                  <use href="#icon-right">
+                  </use>
+                </svg>
+              </a>
+            </li>
+            <li class="border-b border-linea dark:border-linea-oscura">
+              <a href="#temporada" class="nav-link flex min-h-20 items-center justify-between gap-3 py-4 font-titulo text-[clamp(1.5rem,6.7vw,2rem)] font-semibold">
+                De temporada
+                <svg class="size-6 shrink-0" aria-hidden="true" width="24" height="24">
+                  <use href="#icon-right">
+                  </use>
+                </svg>
+              </a>
+            </li>
+            <li class="border-b border-linea dark:border-linea-oscura">
+              <a href="#obrador" class="nav-link flex min-h-20 items-center justify-between gap-3 py-4 font-titulo text-[clamp(1.5rem,6.7vw,2rem)] font-semibold">
+                El obrador
+                <svg class="size-6 shrink-0" aria-hidden="true" width="24" height="24">
+                  <use href="#icon-right">
+                  </use>
+                </svg>
+              </a>
+            </li>
+            <li class="border-b border-linea dark:border-linea-oscura">
+              <a href="#encargos" class="nav-link flex min-h-20 items-center justify-between gap-3 py-4 font-titulo text-[clamp(1.5rem,6.7vw,2rem)] font-semibold">
+                Tartas por encargo
+                <svg class="size-6 shrink-0" aria-hidden="true" width="24" height="24">
+                  <use href="#icon-right">
+                  </use>
+                </svg>
+              </a>
+            </li>
+            <li class="border-b border-linea dark:border-linea-oscura">
+              <a href="#visitanos" class="nav-link flex min-h-20 items-center justify-between gap-3 py-4 font-titulo text-[clamp(1.5rem,6.7vw,2rem)] font-semibold">
+                Visítanos
+                <svg class="size-6 shrink-0" aria-hidden="true" width="24" height="24">
+                  <use href="#icon-right">
+                  </use>
+                </svg>
+              </a>
+            </li>
+          </ul>
+        </nav>
+        <button type="button" data-theme-toggle class="inline-flex min-h-12 items-center justify-center rounded-[3px] border border-linea px-6 py-3 text-base font-semibold transition-colors hover:bg-harina dark:border-linea-oscura dark:hover:bg-corteza mt-8 gap-3" aria-label="Modo oscuro" aria-pressed="false" title="Cambiar entre modo claro y oscuro">
+          <svg class="size-5 dark:hidden" aria-hidden="true" width="24" height="24">
+            <use href="#icon-moon">
+            </use>
+          </svg>
+          <svg class="hidden size-5 dark:block" aria-hidden="true" width="24" height="24">
+            <use href="#icon-sun">
+            </use>
+          </svg>
+          <span>
+            Modo oscuro
+          </span>
+        </button>
+        <div class="mt-auto pt-10">
+          <p class="text-sm font-semibold">
+            Panadería · Obrador · Pastelería
+          </p>
+          <p class="mt-3 text-xs text-avellana dark:text-avellana-clara">
+            Comercio ficticio · Proyecto académico
+          </p>
+        </div>
+      </div>
+    </dialog>
+    <!-- Contenido -->
+    <main id="contenido" tabindex="-1">
+      <section aria-labelledby="hero-title" class="mx-auto max-w-[1360px] px-6 sm:px-8 md:px-10 pb-8 pt-9 lg:pb-10 lg:pt-8">
+        <div class="grid items-center gap-8 lg:grid-cols-2 lg:gap-16">
+          <div class="py-0 lg:py-7">
+            <p class="text-xs font-semibold uppercase tracking-[0.1em] text-teja dark:text-brasa">
+              Tu panadería de barrio
+            </p>
+            <h1 id="hero-title" class="hero-title mt-8 font-titulo text-[clamp(3rem,15.4vw,3.75rem)] font-semibold leading-[0.99] tracking-[-0.025em] lg:mt-10 lg:text-[clamp(4rem,6.5vw,5.875rem)]">
+              <span class="block">
+                Lo bueno
+              </span>
+              <span class="block">
+                lleva su
+              </span>
+              <span class="block">
+                tiempo.
+              </span>
+            </h1>
+            <p class="mt-7 max-w-[500px] text-lg leading-relaxed lg:mt-8 lg:text-xl">
+              Pan de masa madre, bollería recién horneada y tartas hechas en nuestro obrador.
+            </p>
+            <div class="mt-8 flex flex-col gap-3 sm:flex-row lg:mt-10">
+              <a class="inline-flex min-h-12 items-center justify-center rounded-[3px] bg-teja px-6 py-3 text-base font-semibold text-harina transition-colors hover:bg-tostado dark:bg-brasa dark:text-carbon dark:hover:bg-crema" href="#mostrador">
+                Ver el mostrador
+              </a>
+              <a class="inline-flex min-h-12 items-center justify-center rounded-[3px] border border-linea px-6 py-3 text-base font-semibold transition-colors hover:bg-harina dark:border-linea-oscura dark:hover:bg-corteza" href="#visitanos">
+                Horario y ubicación
+              </a>
+            </div>
+          </div>
+          <figure class="relative min-w-0">
+            <img src="assets/images/hero-1536.webp" srcset="assets/images/hero-768.webp 768w, assets/images/hero-1536.webp 1536w" sizes="(min-width: 1440px) 608px, (min-width: 1024px) 46vw, 100vw" alt="Hogaza de masa madre abierta, con corteza crujiente y miga irregular sobre lino y madera." width="1536" height="1024" fetchpriority="high" class="aspect-[1.22/1] w-full object-cover lg:aspect-[1.06/1]">
+            <figcaption class="absolute bottom-5 left-4 bg-crema px-4 py-3 text-sm font-semibold lg:bottom-6 lg:left-6 dark:bg-carbon">
+              Hecho aquí. Cada día.
+            </figcaption>
+          </figure>
+        </div>
+        <p class="mt-7 text-xs lg:mt-8 lg:text-sm text-avellana dark:text-avellana-clara">
+          Masa madre · Manos al trabajo · Horno propio
+        </p>
+      </section>
+      <div class="bg-teja py-6 text-center text-sm font-semibold uppercase tracking-[0.08em] text-crema dark:bg-corteza">
+        <span>
+          Pan de cada día
+        </span>
+        <span aria-hidden="true" class="mx-5">
+          /
+        </span>
+        <span class="hidden sm:inline">
+          Dulces para quedarse un rato
+          <span aria-hidden="true" class="mx-5">
+            /
+          </span>
+        </span>
+        <span>
+          MIGA
+        </span>
+      </div>
+      <!-- Productos -->
+      <section id="mostrador" aria-labelledby="catalog-title" class="mx-auto max-w-[1360px] px-6 sm:px-8 md:px-10 py-16 lg:py-24">
+        <div class="grid gap-5 lg:grid-cols-2 lg:items-end">
+          <div>
+            <p class="text-xs font-semibold uppercase tracking-[0.1em] text-teja dark:text-brasa">
+              01 / El mostrador
+            </p>
+            <h2 tabindex="-1" id="catalog-title" class="font-titulo font-semibold text-[clamp(2.125rem,4vw,3.625rem)] leading-[1.08] tracking-[-0.025em] mt-6">
+              Lo de siempre.
+              <br>
+              Como debe ser.
+            </h2>
+          </div>
+          <p class="max-w-md text-base leading-relaxed lg:ml-auto lg:pb-3 lg:text-lg">
+            Para llevar a casa, compartir o darte un pequeño capricho. Así es nuestro mostrador.
+          </p>
+        </div>
+        <div class="mb-7 mt-8 flex flex-wrap items-center justify-between gap-4 lg:mb-10 lg:mt-10">
+          <div role="group" aria-label="Filtrar productos por categoría" class="flex w-full flex-wrap gap-1.5 sm:w-auto sm:gap-2">
+            <button type="button" data-filter="todo" aria-pressed="true" aria-controls="product-grid" class="inline-flex min-h-11 items-center justify-center gap-1.5 rounded-[3px] border px-2 text-sm font-semibold sm:gap-2 sm:px-5 sm:text-base border-linea dark:border-linea-oscura aria-pressed:border-teja aria-pressed:bg-teja aria-pressed:text-harina dark:aria-pressed:border-brasa dark:aria-pressed:bg-brasa dark:aria-pressed:text-carbon hover:underline">
+              <svg class="filter-check size-3 shrink-0" aria-hidden="true" width="24" height="24">
+                <use href="#icon-check">
+                </use>
+              </svg>
+              <span>
+                Todo
+              </span>
+            </button>
+            <button type="button" data-filter="pan" aria-pressed="false" aria-controls="product-grid" class="inline-flex min-h-11 items-center justify-center gap-1.5 rounded-[3px] border px-2 text-sm font-semibold sm:gap-2 sm:px-5 sm:text-base border-linea dark:border-linea-oscura aria-pressed:border-teja aria-pressed:bg-teja aria-pressed:text-harina dark:aria-pressed:border-brasa dark:aria-pressed:bg-brasa dark:aria-pressed:text-carbon hover:underline">
+              <svg class="filter-check size-3 shrink-0" aria-hidden="true" width="24" height="24">
+                <use href="#icon-check">
+                </use>
+              </svg>
+              <span>
+                Pan
+              </span>
+            </button>
+            <button type="button" data-filter="bolleria" aria-pressed="false" aria-controls="product-grid" class="inline-flex min-h-11 items-center justify-center gap-1.5 rounded-[3px] border px-2 text-sm font-semibold sm:gap-2 sm:px-5 sm:text-base border-linea dark:border-linea-oscura aria-pressed:border-teja aria-pressed:bg-teja aria-pressed:text-harina dark:aria-pressed:border-brasa dark:aria-pressed:bg-brasa dark:aria-pressed:text-carbon hover:underline">
+              <svg class="filter-check size-3 shrink-0" aria-hidden="true" width="24" height="24">
+                <use href="#icon-check">
+                </use>
+              </svg>
+              <span>
+                Bollería
+              </span>
+            </button>
+            <button type="button" data-filter="pasteleria" aria-pressed="false" aria-controls="product-grid" class="inline-flex min-h-11 items-center justify-center gap-1.5 rounded-[3px] border px-2 text-sm font-semibold sm:gap-2 sm:px-5 sm:text-base border-linea dark:border-linea-oscura aria-pressed:border-teja aria-pressed:bg-teja aria-pressed:text-harina dark:aria-pressed:border-brasa dark:aria-pressed:bg-brasa dark:aria-pressed:text-carbon hover:underline">
+              <svg class="filter-check size-3 shrink-0" aria-hidden="true" width="24" height="24">
+                <use href="#icon-check">
+                </use>
+              </svg>
+              <span>
+                Pastelería
+              </span>
+            </button>
+          </div>
+          <p id="product-count" class="text-sm text-avellana dark:text-avellana-clara" role="status" aria-live="polite" aria-atomic="true">
+            Mostrando 9 productos
+          </p>
+        </div>
+        <div id="product-grid" class="grid grid-cols-1 items-start gap-x-4 gap-y-8 xs:grid-cols-2 sm:gap-6 lg:grid-cols-3 lg:gap-y-10">
+          <article data-product data-category="pan" class="product-card flex min-w-0 flex-col border-b border-linea pb-1 dark:border-linea-oscura">
+            <div class="overflow-hidden bg-harina">
+              <img class="product-image aspect-[2/1] w-full object-cover" src="assets/images/hogaza.webp" alt="Hogaza redonda de masa madre con corteza dorada y greña abierta." width="512" height="256" loading="lazy" decoding="async">
+            </div>
+            <div class="flex flex-1 flex-col pt-4">
+              <p class="text-xs font-semibold uppercase tracking-[0.1em] text-teja dark:text-brasa hidden text-[11px] lg:block">
+                Pan
+              </p>
+              <h3 class="mt-1 min-h-[3.2em] font-titulo text-lg font-semibold leading-[1.15] lg:mt-2 lg:min-h-0 lg:text-2xl">
+                Hogaza de la casa
+              </h3>
+              <p class="mt-3 hidden text-[15px] leading-relaxed lg:block">
+                Corteza crujiente, miga abierta y el sabor de una fermentación pausada.
+              </p>
+              <p class="mt-auto flex flex-wrap items-baseline justify-between gap-x-3 gap-y-1 pt-4">
+                <span class="text-sm text-avellana dark:text-avellana-clara">
+                  750 g
+                </span>
+                <span class="text-lg font-semibold">
+                  5,20 €
+                </span>
+              </p>
+              <details class="product-details mt-2">
+                <summary class="nav-link flex min-h-11 items-center justify-between gap-2 text-sm font-semibold">
+                  <span>
+                    <span class="when-closed">
+                      Detalles
+                    </span>
+                    <span class="when-open">
+                      Ocultar detalles
+                    </span>
+                    <span class="sr-only">
+                      de Hogaza de la casa
+                    </span>
+                  </span>
+                  <span aria-hidden="true" class="text-xl">
+                    <span class="when-closed">
+                      +
+                    </span>
+                    <span class="when-open">
+                      −
+                    </span>
+                  </span>
+                </summary>
+                <div class="details-content space-y-3 pb-5 pt-2 text-sm leading-relaxed">
+                  <p class="lg:hidden">
+                    Corteza crujiente, miga abierta y el sabor de una fermentación pausada.
+                  </p>
+                  <p class="text-avellana dark:text-avellana-clara">
+                    Consulta ingredientes y alérgenos en el mostrador.
+                  </p>
+                </div>
+              </details>
+            </div>
+          </article>
+          <article data-product data-category="pan" class="product-card flex min-w-0 flex-col border-b border-linea pb-1 dark:border-linea-oscura">
+            <div class="overflow-hidden bg-harina">
+              <img class="product-image aspect-[2/1] w-full object-cover" src="assets/images/barra.webp" alt="Barra de pan dorada con cortes diagonales en la corteza." width="512" height="256" loading="lazy" decoding="async">
+            </div>
+            <div class="flex flex-1 flex-col pt-4">
+              <p class="text-xs font-semibold uppercase tracking-[0.1em] text-teja dark:text-brasa hidden text-[11px] lg:block">
+                Pan
+              </p>
+              <h3 class="mt-1 min-h-[3.2em] font-titulo text-lg font-semibold leading-[1.15] lg:mt-2 lg:min-h-0 lg:text-2xl">
+                Barra de barrio
+              </h3>
+              <p class="mt-3 hidden text-[15px] leading-relaxed lg:block">
+                Dorada por fuera, ligera por dentro. La compañera de todas las comidas.
+              </p>
+              <p class="mt-auto flex flex-wrap items-baseline justify-between gap-x-3 gap-y-1 pt-4">
+                <span class="text-sm text-avellana dark:text-avellana-clara">
+                  250 g
+                </span>
+                <span class="text-lg font-semibold">
+                  1,80 €
+                </span>
+              </p>
+              <details class="product-details mt-2">
+                <summary class="nav-link flex min-h-11 items-center justify-between gap-2 text-sm font-semibold">
+                  <span>
+                    <span class="when-closed">
+                      Detalles
+                    </span>
+                    <span class="when-open">
+                      Ocultar detalles
+                    </span>
+                    <span class="sr-only">
+                      de Barra de barrio
+                    </span>
+                  </span>
+                  <span aria-hidden="true" class="text-xl">
+                    <span class="when-closed">
+                      +
+                    </span>
+                    <span class="when-open">
+                      −
+                    </span>
+                  </span>
+                </summary>
+                <div class="details-content space-y-3 pb-5 pt-2 text-sm leading-relaxed">
+                  <p class="lg:hidden">
+                    Dorada por fuera, ligera por dentro. La compañera de todas las comidas.
+                  </p>
+                  <p class="text-avellana dark:text-avellana-clara">
+                    Consulta ingredientes y alérgenos en el mostrador.
+                  </p>
+                </div>
+              </details>
+            </div>
+          </article>
+          <article data-product data-category="pan" class="product-card flex min-w-0 flex-col border-b border-linea pb-1 dark:border-linea-oscura">
+            <div class="overflow-hidden bg-harina">
+              <img class="product-image aspect-[2/1] w-full object-cover" src="assets/images/centeno.webp" alt="Pan ovalado de centeno cubierto de semillas." width="512" height="256" loading="lazy" decoding="async">
+            </div>
+            <div class="flex flex-1 flex-col pt-4">
+              <p class="text-xs font-semibold uppercase tracking-[0.1em] text-teja dark:text-brasa hidden text-[11px] lg:block">
+                Pan
+              </p>
+              <h3 class="mt-1 min-h-[3.2em] font-titulo text-lg font-semibold leading-[1.15] lg:mt-2 lg:min-h-0 lg:text-2xl">
+                Centeno y semillas
+              </h3>
+              <p class="mt-3 hidden text-[15px] leading-relaxed lg:block">
+                Miga densa y aromática, con semillas de girasol y lino.
+              </p>
+              <p class="mt-auto flex flex-wrap items-baseline justify-between gap-x-3 gap-y-1 pt-4">
+                <span class="text-sm text-avellana dark:text-avellana-clara">
+                  600 g
+                </span>
+                <span class="text-lg font-semibold">
+                  5,80 €
+                </span>
+              </p>
+              <details class="product-details mt-2">
+                <summary class="nav-link flex min-h-11 items-center justify-between gap-2 text-sm font-semibold">
+                  <span>
+                    <span class="when-closed">
+                      Detalles
+                    </span>
+                    <span class="when-open">
+                      Ocultar detalles
+                    </span>
+                    <span class="sr-only">
+                      de Centeno y semillas
+                    </span>
+                  </span>
+                  <span aria-hidden="true" class="text-xl">
+                    <span class="when-closed">
+                      +
+                    </span>
+                    <span class="when-open">
+                      −
+                    </span>
+                  </span>
+                </summary>
+                <div class="details-content space-y-3 pb-5 pt-2 text-sm leading-relaxed">
+                  <p class="lg:hidden">
+                    Miga densa y aromática, con semillas de girasol y lino.
+                  </p>
+                  <p class="text-avellana dark:text-avellana-clara">
+                    Consulta ingredientes y alérgenos en el mostrador.
+                  </p>
+                </div>
+              </details>
+            </div>
+          </article>
+          <article data-product data-category="bolleria" class="product-card flex min-w-0 flex-col border-b border-linea pb-1 dark:border-linea-oscura">
+            <div class="overflow-hidden bg-harina">
+              <img class="product-image aspect-[2/1] w-full object-cover" src="assets/images/croissant.webp" alt="Croissant de mantequilla con capas de hojaldre visibles." width="512" height="256" loading="lazy" decoding="async">
+            </div>
+            <div class="flex flex-1 flex-col pt-4">
+              <p class="text-xs font-semibold uppercase tracking-[0.1em] text-teja dark:text-brasa hidden text-[11px] lg:block">
+                Bollería
+              </p>
+              <h3 class="mt-1 min-h-[3.2em] font-titulo text-lg font-semibold leading-[1.15] lg:mt-2 lg:min-h-0 lg:text-2xl">
+                Croissant de mantequilla
+              </h3>
+              <p class="mt-3 hidden text-[15px] leading-relaxed lg:block">
+                Capas finas, puntas crujientes y un interior ligero.
+              </p>
+              <p class="mt-auto flex flex-wrap items-baseline justify-between gap-x-3 gap-y-1 pt-4">
+                <span class="text-sm text-avellana dark:text-avellana-clara">
+                  Unidad
+                </span>
+                <span class="text-lg font-semibold">
+                  2,60 €
+                </span>
+              </p>
+              <details class="product-details mt-2">
+                <summary class="nav-link flex min-h-11 items-center justify-between gap-2 text-sm font-semibold">
+                  <span>
+                    <span class="when-closed">
+                      Detalles
+                    </span>
+                    <span class="when-open">
+                      Ocultar detalles
+                    </span>
+                    <span class="sr-only">
+                      de Croissant de mantequilla
+                    </span>
+                  </span>
+                  <span aria-hidden="true" class="text-xl">
+                    <span class="when-closed">
+                      +
+                    </span>
+                    <span class="when-open">
+                      −
+                    </span>
+                  </span>
+                </summary>
+                <div class="details-content space-y-3 pb-5 pt-2 text-sm leading-relaxed">
+                  <p class="lg:hidden">
+                    Capas finas, puntas crujientes y un interior ligero.
+                  </p>
+                  <p class="text-avellana dark:text-avellana-clara">
+                    Consulta ingredientes y alérgenos en el mostrador.
+                  </p>
+                </div>
+              </details>
+            </div>
+          </article>
+          <article data-product data-category="bolleria" class="product-card flex min-w-0 flex-col border-b border-linea pb-1 dark:border-linea-oscura">
+            <div class="overflow-hidden bg-harina">
+              <img class="product-image aspect-[2/1] w-full object-cover" src="assets/images/napolitana.webp" alt="Napolitana dorada con chocolate en sus extremos." width="512" height="256" loading="lazy" decoding="async">
+            </div>
+            <div class="flex flex-1 flex-col pt-4">
+              <p class="text-xs font-semibold uppercase tracking-[0.1em] text-teja dark:text-brasa hidden text-[11px] lg:block">
+                Bollería
+              </p>
+              <h3 class="mt-1 min-h-[3.2em] font-titulo text-lg font-semibold leading-[1.15] lg:mt-2 lg:min-h-0 lg:text-2xl">
+                Napolitana de chocolate
+              </h3>
+              <p class="mt-3 hidden text-[15px] leading-relaxed lg:block">
+                Hojaldre de mantequilla con dos barras de chocolate negro.
+              </p>
+              <p class="mt-auto flex flex-wrap items-baseline justify-between gap-x-3 gap-y-1 pt-4">
+                <span class="text-sm text-avellana dark:text-avellana-clara">
+                  Unidad
+                </span>
+                <span class="text-lg font-semibold">
+                  2,90 €
+                </span>
+              </p>
+              <details class="product-details mt-2">
+                <summary class="nav-link flex min-h-11 items-center justify-between gap-2 text-sm font-semibold">
+                  <span>
+                    <span class="when-closed">
+                      Detalles
+                    </span>
+                    <span class="when-open">
+                      Ocultar detalles
+                    </span>
+                    <span class="sr-only">
+                      de Napolitana de chocolate
+                    </span>
+                  </span>
+                  <span aria-hidden="true" class="text-xl">
+                    <span class="when-closed">
+                      +
+                    </span>
+                    <span class="when-open">
+                      −
+                    </span>
+                  </span>
+                </summary>
+                <div class="details-content space-y-3 pb-5 pt-2 text-sm leading-relaxed">
+                  <p class="lg:hidden">
+                    Hojaldre de mantequilla con dos barras de chocolate negro.
+                  </p>
+                  <p class="text-avellana dark:text-avellana-clara">
+                    Consulta ingredientes y alérgenos en el mostrador.
+                  </p>
+                </div>
+              </details>
+            </div>
+          </article>
+          <article data-product data-category="bolleria" class="product-card flex min-w-0 flex-col border-b border-linea pb-1 dark:border-linea-oscura">
+            <div class="overflow-hidden bg-harina">
+              <img class="product-image aspect-[2/1] w-full object-cover" src="assets/images/caracola.webp" alt="Caracola en espiral con canela y glaseado claro." width="512" height="256" loading="lazy" decoding="async">
+            </div>
+            <div class="flex flex-1 flex-col pt-4">
+              <p class="text-xs font-semibold uppercase tracking-[0.1em] text-teja dark:text-brasa hidden text-[11px] lg:block">
+                Bollería
+              </p>
+              <h3 class="mt-1 min-h-[3.2em] font-titulo text-lg font-semibold leading-[1.15] lg:mt-2 lg:min-h-0 lg:text-2xl">
+                Caracola de canela
+              </h3>
+              <p class="mt-3 hidden text-[15px] leading-relaxed lg:block">
+                Masa suave, espiral de canela y un glaseado ligero.
+              </p>
+              <p class="mt-auto flex flex-wrap items-baseline justify-between gap-x-3 gap-y-1 pt-4">
+                <span class="text-sm text-avellana dark:text-avellana-clara">
+                  Unidad
+                </span>
+                <span class="text-lg font-semibold">
+                  3,20 €
+                </span>
+              </p>
+              <details class="product-details mt-2">
+                <summary class="nav-link flex min-h-11 items-center justify-between gap-2 text-sm font-semibold">
+                  <span>
+                    <span class="when-closed">
+                      Detalles
+                    </span>
+                    <span class="when-open">
+                      Ocultar detalles
+                    </span>
+                    <span class="sr-only">
+                      de Caracola de canela
+                    </span>
+                  </span>
+                  <span aria-hidden="true" class="text-xl">
+                    <span class="when-closed">
+                      +
+                    </span>
+                    <span class="when-open">
+                      −
+                    </span>
+                  </span>
+                </summary>
+                <div class="details-content space-y-3 pb-5 pt-2 text-sm leading-relaxed">
+                  <p class="lg:hidden">
+                    Masa suave, espiral de canela y un glaseado ligero.
+                  </p>
+                  <p class="text-avellana dark:text-avellana-clara">
+                    Consulta ingredientes y alérgenos en el mostrador.
+                  </p>
+                </div>
+              </details>
+            </div>
+          </article>
+          <article data-product data-category="pasteleria" class="product-card flex min-w-0 flex-col border-b border-linea pb-1 dark:border-linea-oscura">
+            <div class="overflow-hidden bg-harina">
+              <img class="product-image aspect-[2/1] w-full object-cover" src="assets/images/queso.webp" alt="Porción de tarta de queso cremosa con superficie tostada." width="512" height="236" loading="lazy" decoding="async">
+            </div>
+            <div class="flex flex-1 flex-col pt-4">
+              <p class="text-xs font-semibold uppercase tracking-[0.1em] text-teja dark:text-brasa hidden text-[11px] lg:block">
+                Pastelería
+              </p>
+              <h3 class="mt-1 min-h-[3.2em] font-titulo text-lg font-semibold leading-[1.15] lg:mt-2 lg:min-h-0 lg:text-2xl">
+                Tarta de queso
+              </h3>
+              <p class="mt-3 hidden text-[15px] leading-relaxed lg:block">
+                Centro cremoso, superficie tostada y una base fina de galleta.
+              </p>
+              <p class="mt-auto flex flex-wrap items-baseline justify-between gap-x-3 gap-y-1 pt-4">
+                <span class="text-sm text-avellana dark:text-avellana-clara">
+                  Porción
+                </span>
+                <span class="text-lg font-semibold">
+                  4,50 €
+                </span>
+              </p>
+              <details class="product-details mt-2">
+                <summary class="nav-link flex min-h-11 items-center justify-between gap-2 text-sm font-semibold">
+                  <span>
+                    <span class="when-closed">
+                      Detalles
+                    </span>
+                    <span class="when-open">
+                      Ocultar detalles
+                    </span>
+                    <span class="sr-only">
+                      de Tarta de queso
+                    </span>
+                  </span>
+                  <span aria-hidden="true" class="text-xl">
+                    <span class="when-closed">
+                      +
+                    </span>
+                    <span class="when-open">
+                      −
+                    </span>
+                  </span>
+                </summary>
+                <div class="details-content space-y-3 pb-5 pt-2 text-sm leading-relaxed">
+                  <p class="lg:hidden">
+                    Centro cremoso, superficie tostada y una base fina de galleta.
+                  </p>
+                  <p class="text-avellana dark:text-avellana-clara">
+                    Consulta ingredientes y alérgenos en el mostrador.
+                  </p>
+                </div>
+              </details>
+            </div>
+          </article>
+          <article data-product data-category="pasteleria" class="product-card flex min-w-0 flex-col border-b border-linea pb-1 dark:border-linea-oscura">
+            <div class="overflow-hidden bg-harina">
+              <img class="product-image aspect-[2/1] w-full object-cover" src="assets/images/limon.webp" alt="Tartaleta individual con picos de merengue tostado." width="512" height="236" loading="lazy" decoding="async">
+            </div>
+            <div class="flex flex-1 flex-col pt-4">
+              <p class="text-xs font-semibold uppercase tracking-[0.1em] text-teja dark:text-brasa hidden text-[11px] lg:block">
+                Pastelería
+              </p>
+              <h3 class="mt-1 min-h-[3.2em] font-titulo text-lg font-semibold leading-[1.15] lg:mt-2 lg:min-h-0 lg:text-2xl">
+                Tartaleta de limón
+              </h3>
+              <p class="mt-3 hidden text-[15px] leading-relaxed lg:block">
+                Crema de limón, base crujiente y merengue tostado.
+              </p>
+              <p class="mt-auto flex flex-wrap items-baseline justify-between gap-x-3 gap-y-1 pt-4">
+                <span class="text-sm text-avellana dark:text-avellana-clara">
+                  Individual
+                </span>
+                <span class="text-lg font-semibold">
+                  4,20 €
+                </span>
+              </p>
+              <details class="product-details mt-2">
+                <summary class="nav-link flex min-h-11 items-center justify-between gap-2 text-sm font-semibold">
+                  <span>
+                    <span class="when-closed">
+                      Detalles
+                    </span>
+                    <span class="when-open">
+                      Ocultar detalles
+                    </span>
+                    <span class="sr-only">
+                      de Tartaleta de limón
+                    </span>
+                  </span>
+                  <span aria-hidden="true" class="text-xl">
+                    <span class="when-closed">
+                      +
+                    </span>
+                    <span class="when-open">
+                      −
+                    </span>
+                  </span>
+                </summary>
+                <div class="details-content space-y-3 pb-5 pt-2 text-sm leading-relaxed">
+                  <p class="lg:hidden">
+                    Crema de limón, base crujiente y merengue tostado.
+                  </p>
+                  <p class="text-avellana dark:text-avellana-clara">
+                    Consulta ingredientes y alérgenos en el mostrador.
+                  </p>
+                </div>
+              </details>
+            </div>
+          </article>
+          <article data-product data-category="pasteleria" class="product-card flex min-w-0 flex-col border-b border-linea pb-1 dark:border-linea-oscura">
+            <div class="overflow-hidden bg-harina">
+              <img class="product-image aspect-[2/1] w-full object-cover" src="assets/images/naranja.webp" alt="Porción de bizcocho de naranja con una fina capa de glaseado." width="512" height="236" loading="lazy" decoding="async">
+            </div>
+            <div class="flex flex-1 flex-col pt-4">
+              <p class="text-xs font-semibold uppercase tracking-[0.1em] text-teja dark:text-brasa hidden text-[11px] lg:block">
+                Pastelería
+              </p>
+              <h3 class="mt-1 min-h-[3.2em] font-titulo text-lg font-semibold leading-[1.15] lg:mt-2 lg:min-h-0 lg:text-2xl">
+                Bizcocho de naranja
+              </h3>
+              <p class="mt-3 hidden text-[15px] leading-relaxed lg:block">
+                Miga tierna, ralladura de naranja y una cobertura ligera.
+              </p>
+              <p class="mt-auto flex flex-wrap items-baseline justify-between gap-x-3 gap-y-1 pt-4">
+                <span class="text-sm text-avellana dark:text-avellana-clara">
+                  Porción
+                </span>
+                <span class="text-lg font-semibold">
+                  3,40 €
+                </span>
+              </p>
+              <details class="product-details mt-2">
+                <summary class="nav-link flex min-h-11 items-center justify-between gap-2 text-sm font-semibold">
+                  <span>
+                    <span class="when-closed">
+                      Detalles
+                    </span>
+                    <span class="when-open">
+                      Ocultar detalles
+                    </span>
+                    <span class="sr-only">
+                      de Bizcocho de naranja
+                    </span>
+                  </span>
+                  <span aria-hidden="true" class="text-xl">
+                    <span class="when-closed">
+                      +
+                    </span>
+                    <span class="when-open">
+                      −
+                    </span>
+                  </span>
+                </summary>
+                <div class="details-content space-y-3 pb-5 pt-2 text-sm leading-relaxed">
+                  <p class="lg:hidden">
+                    Miga tierna, ralladura de naranja y una cobertura ligera.
+                  </p>
+                  <p class="text-avellana dark:text-avellana-clara">
+                    Consulta ingredientes y alérgenos en el mostrador.
+                  </p>
+                </div>
+              </details>
+            </div>
+          </article>
+        </div>
+        <p class="mt-8 max-w-3xl text-sm leading-relaxed text-avellana dark:text-avellana-clara">
+          Elaboramos en pequeñas hornadas. La selección puede variar a lo largo del día. Consulta en el mostrador los ingredientes y alérgenos de cada producto.
+        </p>
+      </section>
+      <!-- Especialidades de temporada -->
+      <section id="temporada" aria-labelledby="season-title" class="season-section bg-teja py-14 text-crema lg:py-16 dark:bg-corteza">
+        <div id="season-carousel" class="splide mx-auto max-w-[1360px] px-6 sm:px-8 md:px-10" role="group" aria-labelledby="season-title">
+          <div class="mb-8 flex flex-wrap items-end justify-between gap-6">
+            <div>
+              <p class="text-xs font-semibold uppercase tracking-[0.1em]">
+                02 / De temporada
+              </p>
+              <h2 tabindex="-1" id="season-title" class="font-titulo font-semibold text-[clamp(2.125rem,4vw,3.625rem)] leading-[1.08] tracking-[-0.025em] mt-6">
+                El otoño pasa por el horno.
+              </h2>
+              <p class="mt-5 max-w-2xl text-base leading-relaxed lg:text-lg">
+                Tres especialidades para los días que empiezan a pedir algo calentito.
+              </p>
+            </div>
+            <div class="splide__arrows flex w-full justify-end lg:w-auto">
+              <div class="flex gap-3">
+                <button id="season-prev" type="button" class="splide__arrow splide__arrow--prev inline-flex size-11 items-center justify-center rounded-full border border-crema transition-colors hover:bg-crema hover:text-teja" aria-label="Especialidad anterior" aria-controls="season-carousel">
+                  <svg class="size-6" aria-hidden="true" width="24" height="24">
+                    <use href="#icon-left">
+                    </use>
+                  </svg>
+                </button>
+                <button id="season-next" type="button" class="splide__arrow splide__arrow--next inline-flex size-11 items-center justify-center rounded-full border border-crema transition-colors hover:bg-crema hover:text-teja" aria-label="Especialidad siguiente" aria-controls="season-carousel">
+                  <svg class="size-6" aria-hidden="true" width="24" height="24">
+                    <use href="#icon-right">
+                    </use>
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </div>
+          <div>
+            <div class="splide__track">
+              <ul class="splide__list">
+                <li class="splide__slide">
+                  <article class="h-full">
+                    <img class="season-image w-full bg-harina" src="assets/images/nueces.webp" alt="Hogaza de nueces cortada, con las nueces visibles en la miga." width="512" height="276" loading="lazy" decoding="async">
+                    <h3 class="mt-5 font-titulo text-2xl font-semibold leading-tight">
+                      Hogaza de nueces
+                    </h3>
+                    <p class="mt-3 text-base leading-relaxed">
+                      Nuestra masa madre con nueces: una miga aromática para acompañar quesos, sopas o una cucharada de miel.
+                    </p>
+                    <p class="mt-4 font-semibold">
+                      600 g · 6,20 €
+                    </p>
+                  </article>
+                </li>
+                <li class="splide__slide">
+                  <article class="h-full">
+                    <img class="season-image w-full bg-harina" src="assets/images/manzana.webp" alt="Caracola de masa dorada con trozos de manzana asada." width="512" height="276" loading="lazy" decoding="async">
+                    <h3 class="mt-5 font-titulo text-2xl font-semibold leading-tight">
+                      Caracola de manzana
+                    </h3>
+                    <p class="mt-3 text-base leading-relaxed">
+                      Manzana asada, canela y capas de masa dorada.
+                    </p>
+                    <p class="mt-4 font-semibold">
+                      Unidad · 3,60 €
+                    </p>
+                  </article>
+                </li>
+                <li class="splide__slide">
+                  <article class="h-full">
+                    <img class="season-image w-full bg-harina" src="assets/images/pera.webp" alt="Porción de tarta con láminas de pera y almendra." width="512" height="276" loading="lazy" decoding="async">
+                    <h3 class="mt-5 font-titulo text-2xl font-semibold leading-tight">
+                      Tarta de pera y almendra
+                    </h3>
+                    <p class="mt-3 text-base leading-relaxed">
+                      Pera horneada sobre crema de almendra y una base fina de masa crujiente.
+                    </p>
+                    <p class="mt-4 font-semibold">
+                      Porción · 4,80 €
+                    </p>
+                  </article>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Nuestro obrador -->
+      <section id="obrador" aria-labelledby="workshop-title" class="mx-auto max-w-[1360px] px-6 sm:px-8 md:px-10 py-16 lg:py-24">
+        <p class="text-xs font-semibold uppercase tracking-[0.1em] text-teja dark:text-brasa">
+          03 / Nuestro obrador
+        </p>
+        <div class="mt-6 grid items-start gap-8 lg:grid-cols-2 lg:gap-16">
+          <div class="lg:order-2">
+            <h2 tabindex="-1" id="workshop-title" class="font-titulo font-semibold text-[clamp(2.125rem,4vw,3.625rem)] leading-[1.08] tracking-[-0.025em]">
+              Antes de abrir, ya estamos con las manos en la masa.
+            </h2>
+            <p class="mt-7 hidden text-lg leading-relaxed lg:block">
+              MIGA nace con una idea sencilla: recuperar el pan de cada día como un pequeño ritual del barrio. En nuestro obrador conviven la masa madre, la bollería recién hecha y las tartas para celebrar juntos.
+            </p>
+            <p class="mt-5 hidden text-lg leading-relaxed lg:block">
+              Alimentamos la masa madre, preparamos los ingredientes y damos forma a cada pieza. Después dejamos que el tiempo y el horno hagan su parte.
+            </p>
+          </div>
+          <img class="aspect-[1.31/1] w-full object-cover lg:order-1 lg:aspect-[1.24/1]" src="assets/images/obrador-1536.webp" srcset="assets/images/obrador-768.webp 768w, assets/images/obrador-1536.webp 1536w" sizes="(min-width: 1440px) 608px, (min-width: 1024px) 46vw, 100vw" alt="Manos formando una pieza de masa sobre la mesa enharinada del obrador." width="1536" height="1024" loading="lazy" decoding="async">
+        </div>
+        <p class="mt-7 text-base leading-relaxed lg:hidden">
+          MIGA nace con una idea sencilla: recuperar el pan de cada día como un pequeño ritual del barrio. En nuestro obrador conviven la masa madre, la bollería recién hecha y las tartas para celebrar juntos.
+        </p>
+        <p class="mt-5 text-base leading-relaxed lg:hidden">
+          Alimentamos la masa madre, preparamos los ingredientes y damos forma a cada pieza. Después dejamos que el tiempo y el horno hagan su parte.
+        </p>
+        <ol class="mt-10 grid gap-5 lg:mt-14 lg:grid-cols-3 lg:gap-8">
+          <li class="flex gap-5 border-t border-linea pt-5 dark:border-linea-oscura">
+            <span class="text-xs font-semibold uppercase tracking-[0.1em] text-teja dark:text-brasa pt-1">
+              01
+            </span>
+            <div>
+              <h3 class="font-titulo text-2xl font-semibold">
+                Mezclar
+              </h3>
+              <p class="mt-2 text-sm text-avellana dark:text-avellana-clara">
+                Harina, agua y masa madre.
+              </p>
+            </div>
+          </li>
+          <li class="flex gap-5 border-t border-linea pt-5 dark:border-linea-oscura">
+            <span class="text-xs font-semibold uppercase tracking-[0.1em] text-teja dark:text-brasa pt-1">
+              02
+            </span>
+            <div>
+              <h3 class="font-titulo text-2xl font-semibold">
+                Dar tiempo
+              </h3>
+              <p class="mt-2 text-sm text-avellana dark:text-avellana-clara">
+                El reposo desarrolla el sabor.
+              </p>
+            </div>
+          </li>
+          <li class="flex gap-5 border-t border-linea pt-5 dark:border-linea-oscura">
+            <span class="text-xs font-semibold uppercase tracking-[0.1em] text-teja dark:text-brasa pt-1">
+              03
+            </span>
+            <div>
+              <h3 class="font-titulo text-2xl font-semibold">
+                Hornear
+              </h3>
+              <p class="mt-2 text-sm text-avellana dark:text-avellana-clara">
+                Cada hornada tiene su ritmo.
+              </p>
+            </div>
+          </li>
+        </ol>
+      </section>
+      <!-- Tartas por encargo -->
+      <section id="encargos" aria-labelledby="orders-title" class="mx-auto max-w-[1360px] px-6 sm:px-8 md:px-10 pb-16 lg:pb-24">
+        <div class="grid gap-10 bg-harina p-6 sm:p-10 lg:grid-cols-[1.15fr_1fr] lg:items-center dark:bg-corteza">
+          <div>
+            <p class="text-xs font-semibold uppercase tracking-[0.1em] text-teja dark:text-brasa">
+              04 / Tartas por encargo
+            </p>
+            <h2 tabindex="-1" id="orders-title" class="mt-6 font-titulo text-[clamp(2rem,3.5vw,3.125rem)] font-semibold leading-[1.08] tracking-[-0.025em]">
+              Tú pones la ocasión.
+              <br>
+              Nosotros, la tarta.
+            </h2>
+            <p class="mt-6 max-w-xl text-base leading-relaxed lg:text-lg">
+              Un cumpleaños, una comida en familia o un viernes que merece celebrarse.
+            </p>
+            <ul class="mt-7 space-y-3 text-[15px] font-semibold lg:text-base">
+              <li>
+                Queso · 6–8 raciones · 28 €
+              </li>
+              <li>
+                Chocolate · 8–10 raciones · 36 €
+              </li>
+              <li>
+                Pera y almendra · 6–8 raciones · 32 €
+              </li>
+            </ul>
+            <p class="mt-7 max-w-xl text-base leading-relaxed text-avellana dark:text-avellana-clara">
+              Cuéntanos qué tarta te gustaría, para cuántas personas y qué día pasarías a recogerla. Consulta con al menos 48 horas de antelación.
+            </p>
+            <a href="#visitanos" class="inline-flex min-h-12 items-center justify-center rounded-[3px] bg-teja px-6 py-3 text-base font-semibold text-harina transition-colors hover:bg-tostado dark:bg-brasa dark:text-carbon dark:hover:bg-crema mt-7 w-full sm:w-auto">
+              Ver cómo contactar
+            </a>
+            <p class="mt-5 text-xs leading-relaxed text-avellana dark:text-avellana-clara">
+              Recogida en el obrador. Sin pedidos ni pagos a través de esta web.
+            </p>
+          </div>
+          <figure class="hidden lg:block">
+            <img class="aspect-[1.6/1] w-full object-cover" src="assets/images/queso.webp" alt="Porción de tarta de queso, una de las tartas disponibles por encargo en la propuesta." width="512" height="236" loading="lazy" decoding="async">
+            <figcaption class="mt-10 text-center font-titulo text-2xl font-semibold text-teja dark:text-brasa">
+              Para celebrar lo cotidiano.
+            </figcaption>
+          </figure>
+        </div>
+      </section>
+      <!-- Horario y contacto -->
+      <section id="visitanos" aria-labelledby="visit-title" class="mx-auto max-w-[1360px] px-6 sm:px-8 md:px-10 pb-16 lg:pb-20">
+        <p class="text-xs font-semibold uppercase tracking-[0.1em] text-teja dark:text-brasa">
+          05 / Visítanos
+        </p>
+        <h2 tabindex="-1" id="visit-title" class="font-titulo font-semibold text-[clamp(2.125rem,4vw,3.625rem)] leading-[1.08] tracking-[-0.025em] mt-6">
+          Nos vemos en MIGA.
+        </h2>
+        <p class="mt-5 text-base lg:text-lg">
+          Pasa a por el pan. Quédate con lo bueno.
+        </p>
+        <div class="mt-10 grid gap-10 md:grid-cols-2 lg:grid-cols-3 lg:gap-12">
+          <div>
+            <h3 class="text-xs font-semibold uppercase tracking-[0.1em] text-teja dark:text-brasa">
+              Horario
+            </h3>
+            <dl class="mt-5 space-y-4 text-[15px] lg:text-base">
+              <div class="flex justify-between gap-5">
+                <dt>
+                  Lunes
+                </dt>
+                <dd class="font-semibold tabular-nums">
+                  Cerrado
+                </dd>
+              </div>
+              <div class="flex justify-between gap-5">
+                <dt>
+                  Martes a viernes
+                </dt>
+                <dd class="font-semibold tabular-nums">
+                  08:00–20:00
+                </dd>
+              </div>
+              <div class="flex justify-between gap-5">
+                <dt>
+                  Sábado
+                </dt>
+                <dd class="font-semibold tabular-nums">
+                  08:30–15:00
+                </dd>
+              </div>
+              <div class="flex justify-between gap-5">
+                <dt>
+                  Domingo
+                </dt>
+                <dd class="font-semibold tabular-nums">
+                  09:00–14:00
+                </dd>
+              </div>
+            </dl>
+          </div>
+          <div>
+            <h3 class="text-xs font-semibold uppercase tracking-[0.1em] text-teja dark:text-brasa">
+              Ubicación y contacto
+            </h3>
+            <address class="mt-5 text-base not-italic leading-relaxed lg:text-lg">
+              Plaza de la Miga, 8
+              <br>
+              Carabanchel, Madrid
+            </address>
+            <p class="mt-3 text-xs text-avellana dark:text-avellana-clara">
+              Dirección ficticia del proyecto.
+            </p>
+            <p class="mt-6 break-words text-lg font-semibold">
+              hola@miga.example
+            </p>
+            <p class="mt-2 text-xs text-avellana dark:text-avellana-clara">
+              Correo de muestra, no operativo.
+            </p>
+          </div>
+          <figure class="map-art relative hidden min-h-[270px] items-center justify-center bg-harina lg:flex dark:bg-corteza" aria-label="Plano ilustrativo de una ubicación ficticia">
+            <span class="bg-teja px-6 py-3 font-titulo text-3xl font-semibold text-crema dark:bg-brasa dark:text-carbon" aria-hidden="true">
+              MIGA
+            </span>
+            <figcaption class="absolute bottom-4 left-4 right-4 bg-harina px-2 py-1 text-xs text-avellana dark:text-avellana-clara dark:bg-corteza">
+              Plano ilustrativo · ubicación ficticia
+            </figcaption>
+          </figure>
+        </div>
+      </section>
+    </main>
+    <!-- Pie de página -->
+    <footer class="bg-teja py-10 text-crema lg:py-12 dark:bg-corteza">
+      <div class="mx-auto max-w-[1360px] px-6 sm:px-8 md:px-10">
+        <div class="flex flex-wrap items-center justify-between gap-8">
+          <p class="wordmark font-titulo text-7xl font-semibold leading-none lg:text-[110px]">
+            MIGA
+          </p>
+          <p class="font-titulo text-2xl font-semibold lg:text-3xl">
+            Pan de cada día.
+            <br>
+            Dulces para quedarse un rato.
+          </p>
+          <a href="#inicio" class="footer-link nav-link inline-flex min-h-11 items-center py-3 text-base font-semibold">
+            Volver al inicio ↑
+          </a>
+        </div>
+        <p class="mt-10 border-t border-crema/40 pt-6 text-xs leading-relaxed lg:text-sm">
+          Proyecto académico UDIT · 2026/2027 · Comercio ficticio. No se realizan pedidos ni pagos.
+        </p>
+      </div>
+    </footer>
+    <noscript>
+      <p class="mx-auto max-w-[1360px] px-6 sm:px-8 md:px-10 py-6">
+        JavaScript está desactivado. Puedes consultar todos los productos, desplegar sus detalles y recorrer las secciones. Los filtros, el menú móvil, el cambio de tema y el carrusel requieren JavaScript.
+      </p>
+    </noscript>
+  </body>
+</html>
